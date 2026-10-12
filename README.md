@@ -47,3 +47,11 @@ Use the following dependency in your Maven project:
     <version>0.0.1</version>
 </dependency>
 ```
+## Continuous Integration (CI)
+This repository uses GitHub Actions for continuous integration. The pipeline is configured in `.github/workflows/maven.yml` and automatically executes on every push to the `main` branch. 
+
+**Pipeline Steps:**
+1. Sets up JDK 17.
+2. Executes `mvn clean test` to run the JUnit 5 test suite.
+3. Generates a JaCoCo code coverage report.
+4. Uploads the JaCoCo HTML report as a downloadable artifact (v4) for coverage verification.
